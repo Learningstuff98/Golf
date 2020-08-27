@@ -2,6 +2,7 @@
 
 body {
   background-color: rgba(85, 82, 83, 0.9);
+  padding-bottom: 40px;
 }
 
 .green {
@@ -31,4 +32,12 @@ body {
   -webkit-align-items: center;
   align-items: center;
   justify-content: center;
+}
+
+.custom-footer {
+  background-color: rgba(24, 21, 22, 0.9);
+  padding: 10px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
