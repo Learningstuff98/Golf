@@ -1,18 +1,18 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
+// header
+.header-color {
+  background-color: rgba(24, 21, 22, 0.9);
+}
+
+// everything else
 body {
   background-color: rgba(85, 82, 83, 0.9);
-  padding-bottom: 40px;
 }
 
 .green {
   color: #00C122;
-}
-
-.custom-navbar {
-  background-color: rgba(24, 21, 22, 0.9);
-  padding: 10px;
 }
 
 .box {
@@ -35,17 +35,10 @@ body {
   justify-content: center;
 }
 
-.custom-footer {
-  background-color: rgba(24, 21, 22, 0.9);
-  padding: 10px;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.landing-box {
+  margin-top: 80px;
 }
 
-.link {
-  font-size: 25px;
-  padding-right: 15px;
+.user-notice {
+  margin-top: 30px;
 }
