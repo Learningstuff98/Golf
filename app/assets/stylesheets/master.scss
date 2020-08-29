@@ -11,7 +11,22 @@
   background-color: rgba(24, 21, 22, 0.9);
   color: #00C122;
   flex-shrink: 0; // contributes to sticky footer behavior
-  padding: 10px;
+  padding: 20px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.leftward-footer-elements {
+  margin-left: 10px;
 }
 
 // what drives the sticky footer behavior
@@ -65,6 +80,9 @@ body {
 }
 
 .link {
-  font-size: 25px;
-  padding-right: 15px;
+  font-size: 18px;
+}
+
+.link:hover {
+  color: rgb(14, 73, 168);
 }

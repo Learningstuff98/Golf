@@ -26,9 +26,13 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <%= link_to "How to play", "#", class: "green" %> 
-          </ul>
+          <%= link_to "How to play", "#", class: "green" %> 
+          <br/>
+          <% if current_user %>
+            <%= link_to "My profile", "#", class: "green" %>
+          <% else %>
+            <%= link_to "Log in to view your profile", new_user_session_path, class: "green" %>
+          <% end %>
         </div>
       </nav>
   
@@ -41,15 +45,33 @@
     </div>
 
     <div class="footer">
-      <%= link_to "How to play", "#", class: "green" %>
-
-      <div>Contact Info</div>
-      Email: andystrube64@gmail.com
-
-      <div>Social</div>
-      <a class="fa fa-linkedin-square fa-3x green link" href="https://www.linkedin.com/in/andy-strube-6231ba152/"></a>
-      <a class="fa fa-github-square fa-3x green link" href="https://github.com/Learningstuff98/Golf"></a>
-      <a class="fa fa-file-text fa-3x green link" href="https://docs.google.com/document/d/1qm4nBdIZfsx8zh4IwYvkVuQYclpOXUCVxnC9vV3_eBM/edit"></a>
+      <div class="row">
+        <div class="column leftward-footer-elements">
+          <%= link_to "How to play", "#", class: "green" %>
+          <br/>
+          <% if current_user %>
+            <%= link_to "My profile", "#", class: "green" %>
+          <% else %>
+            <%= link_to "Log in to view your profile", new_user_session_path, class: "green" %>
+          <% end %>
+          <br/>
+          Email: andystrube64@gmail.com
+        </div>
+        <div class="column">
+          <%= link_to 'https://github.com/Learningstuff98/Golf' do %>
+            <div class="fa fa-github-square link green"> Github</div>
+          <% end %>
+          <br/>
+          <%= link_to 'https://www.linkedin.com/in/andy-strube-6231ba152/' do %>
+            <div class="fa fa-linkedin-square link green"> Linkedin</div>
+          <% end %>
+          <br/>
+          <%= link_to 'https://docs.google.com/document/d/1qm4nBdIZfsx8zh4IwYvkVuQYclpOXUCVxnC9vV3_eBM/edit' do %>
+            <div class="fa fa-file-text link green"> Resume</div>
+          <% end %>
+          <br/>
+        </div>
+      </div>
     </div>
 
   </body>
