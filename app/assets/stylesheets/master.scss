@@ -6,10 +6,31 @@
   background-color: rgba(24, 21, 22, 0.9);
 }
 
-// everything else
+// footer
+.footer {
+  background-color: rgba(24, 21, 22, 0.9);
+  color: #00C122;
+  flex-shrink: 0; // contributes to sticky footer behavior
+  padding: 10px;
+}
+
+// what drives the sticky footer behavior
+
+.content {
+  flex: 1 0 auto;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: rgba(85, 82, 83, 0.9);
+  display: flex;
+  flex-direction: column;
 }
+
+// everything else
 
 .green {
   color: #00C122;
