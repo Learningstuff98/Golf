@@ -7,24 +7,25 @@ class GamesController < ApplicationController
 
   def create
     @game = current_user.games.create(game_params)
-    if @game.valid?
-      redirect_to game_path(@game)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    return redirect_to game_path(@game) if @game.valid?
+    render :new, status: :unprocessable_entity
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = current_game
   end
 
   def destroy
-    game = Game.find(params[:id])
-    game.destroy
+    @game = current_game
+    @game.destroy
     redirect_to root_path
   end
 
   private
+
+  def current_game
+    @game ||= Game.find(params[:id])
+  end
 
   def game_params
     params.require(:game).permit(:rounds, :max_player_count)
