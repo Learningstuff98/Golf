@@ -1,0 +1,9 @@
+<h1 class="green">Game show page</h1>
+
+<%= link_to "End match", game_path(@game), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary green" %>
+
+<h1 class="green">
+  <%= "Player count: #{@game.max_player_count}" %>
+  <br/>
+  <%= "rounds: #{@game.rounds}" %>
+</h1>
