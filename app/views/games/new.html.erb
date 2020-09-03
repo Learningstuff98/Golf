@@ -1,9 +1,11 @@
 <div class="container">
-  <div class="text-center landing-box box col-8">
+  <div class="text-center landing-box box col-4">
     <%= simple_form_for @game, url: games_path do |f| %>
       <h4 class="green start-menu">
+        <%= "Between 2 and 4" %>
         <%= f.input :max_player_count, input_html: { min: '2', max: '4', step: 'any', value: '2' } %>
         <br/>
+        <%= "Between 1 and 9" %>
         <%= f.input :rounds, input_html: { min: '1', max: '9', step: 'any', value: '1' } %>
         <br/>
         <%= f.submit 'Start', class: 'btn btn-primary green' %>
