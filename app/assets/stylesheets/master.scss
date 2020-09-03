@@ -57,6 +57,7 @@ body {
   border-color: #00C122;
   border-radius: 10px;
   background-color: rgba(24, 21, 22, 0.9);
+  margin-top: 80px;
 }
 
 .container {
@@ -69,10 +70,6 @@ body {
   -webkit-align-items: center;
   align-items: center;
   justify-content: center;
-}
-
-.landing-box {
-  margin-top: 80px;
 }
 
 .user-notice {
@@ -89,4 +86,8 @@ body {
 
 .start-menu {
   padding: 10px;
+}
+
+.new-game-box {
+  max-width: 400px;
 }
