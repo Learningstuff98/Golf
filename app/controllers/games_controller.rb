@@ -16,8 +16,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = current_game
-    @game.destroy
+    current_game.destroy
     redirect_to root_path
   end
 
