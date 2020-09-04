@@ -11,4 +11,10 @@ FactoryBot.define do
     password_confirmation { "secretPassword" }
   end
 
+  factory :game do
+    rounds { 9 }
+    max_player_count { 2 }
+    association :user
+  end
+
 end
