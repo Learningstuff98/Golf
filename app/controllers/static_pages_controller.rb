@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   before_action :authenticate_user!, only: [:lobby]
 
-  def index
+  def home
   end
 
   def lobby
