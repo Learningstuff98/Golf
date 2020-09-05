@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :user
+  has_many :game_tokens
   validates :rounds, numericality: {
     message: "Invalid",
     greater_than_or_equal_to: 1,

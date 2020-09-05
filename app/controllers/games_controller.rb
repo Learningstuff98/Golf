@@ -7,7 +7,10 @@ class GamesController < ApplicationController
 
   def create
     @game = current_user.games.create(game_params)
-    return redirect_to game_path(@game) if @game.valid?
+    if @game.valid?
+      @game.game_tokens.create(host_username: @game.user.username)
+      return redirect_to game_path(@game)
+    end
     render :new, status: :unprocessable_entity
   end
 
@@ -16,6 +19,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    current_game.game_tokens.destroy_all
     current_game.destroy
     redirect_to root_path
   end

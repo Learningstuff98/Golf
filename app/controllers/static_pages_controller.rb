@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   end
 
   def lobby
+    @game_tokens = GameToken.all
   end
 
 end

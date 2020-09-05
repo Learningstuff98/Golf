@@ -1,1 +1,13 @@
-<h1>Lobby</h1>
+<div class="green page-content">
+  <h1>Lobby</h1>
+
+  <br/><br/>
+
+  <% @game_tokens.each do |game_token| %>
+    <h4>
+      <%= link_to "Hosted by #{game_token.host_username}", game_path(game_token), class: "green" %>
+    </h4>
+    <br/>
+  <% end %>
+
+</div>
