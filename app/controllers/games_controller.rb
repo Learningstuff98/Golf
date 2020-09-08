@@ -9,6 +9,7 @@ class GamesController < ApplicationController
     @game = current_user.games.create(game_params)
     if @game.valid?
       @game.game_tokens.create(host_username: @game.user.username)
+      SendTokenJob.perform_later(@game.game_tokens.first)
       return redirect_to game_path(@game)
     end
     render :new, status: :unprocessable_entity
