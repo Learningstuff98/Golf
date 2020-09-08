@@ -3,11 +3,10 @@
 
   <br/><br/>
 
-  <% @game_tokens.each do |game_token| %>
-    <h4>
-      <%= link_to "Hosted by #{game_token.host_username}", game_path(game_token.game_id), class: "green" %>
-    </h4>
-    <br/>
-  <% end %>
+  <% url = url_for :only_path => false, :overwrite_params => {}  %>
+  <%= react_component("Lobby", {
+    game_tokens: @game_tokens,
+    lobbyUrl: url 
+  }) %>
 
 </div>
