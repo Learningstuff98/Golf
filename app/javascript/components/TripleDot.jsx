@@ -11,16 +11,9 @@ export default function TripleDot({ message }) {
   });
 
   const handleSettingDots = () => {
-    if(dots === "") {
-      setDots(" .");
-    }
-    if(dots === " .") {
-      setDots(" . .");
-    }
-    if(dots === " . .") {
-      setDots(" . . .");
-    }
-    if(dots === " . . .") {
+    if(dots.length < 6) {
+      setDots(`${dots} .`);
+    } else {
       setDots("");
     }
   };
