@@ -9,7 +9,7 @@ class GamesController < ApplicationController
     @game = current_user.games.create(game_params)
     if @game.valid?
       @game.game_tokens.create(host_username: @game.user.username)
-      SendTokenJob.perform_later(@game.game_tokens.first)
+      SendTokenJob.perform_later(Array(GameToken.all))
       return redirect_to game_path(@game)
     end
     render :new, status: :unprocessable_entity
@@ -21,6 +21,7 @@ class GamesController < ApplicationController
 
   def destroy
     current_game.game_tokens.destroy_all
+    SendTokenJob.perform_later(Array(GameToken.all))
     current_game.destroy
     redirect_to root_path
   end

@@ -12,11 +12,7 @@ export default function Lobby({ game_tokens, lobbyUrl }) {
 
   const handleWebsocketUpdates = () => {
     consumer.subscriptions.create({channel: "LobbyChannel"}, {
-      received(data) {
-        setTokens((prevTokens) => {
-          return [ ...prevTokens, data.game_token ];
-        });
-      }
+      received(data) { setTokens(data.tokens) }
     });
   };
 
