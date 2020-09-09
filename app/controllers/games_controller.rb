@@ -17,6 +17,14 @@ class GamesController < ApplicationController
 
   def show
     @game = current_game
+    if @game.players.count < @game.max_player_count
+      if !@game.already_player?(current_user)
+        @game.players.create(
+          user_id: current_user.id,
+          username: current_user.username
+        )
+      end
+    end
   end
 
   def destroy
