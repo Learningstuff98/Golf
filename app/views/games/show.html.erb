@@ -6,6 +6,6 @@
     <br/>
     <%= "rounds: #{@game.rounds}" %>
     <br/><br/>
-    <%= react_component("Game", { initialPlayers: @game.players }) %>
+    <%= react_component("Game", { initialPlayers: @game.players, game: @game }) %>
   </h1>
 </div>

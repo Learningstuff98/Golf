@@ -23,12 +23,14 @@ class GamesController < ApplicationController
           user_id: current_user.id,
           username: current_user.username
         )
+        SendPlayerJob.perform_later(Array(@game.players))
       end
     end
   end
 
   def destroy
     current_game.game_tokens.destroy_all
+    current_game.players.destroy_all
     SendTokenJob.perform_later(Array(GameToken.all))
     current_game.destroy
     redirect_to root_path
