@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.web_socket_server_url = "wss://golf-andy-strube.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://golf-andy-strube.herokuapp.com', 'http://golf-andy-strube.herokuapp.com']
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { host: 'golf-andy-strube.herokuapp.com' }
 
